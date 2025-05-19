@@ -16,7 +16,7 @@ This bot scans all members in a Discord guild against the screenshare.lol API wi
    \`\`\`
    DISCORD_TOKEN=your_discord_bot_token
    CLIENT_ID=your_discord_application_id
-   SCREENSHARE_API_KEY=your_screenshare_api_key
+   SCREENSHARE_API_KEY=your_screenshare_api_key (API can be retrieved from https://screenshare.lol/api)
    \`\`\`
 3. Install dependencies:
    \`\`\`
@@ -33,7 +33,7 @@ Once the bot is running and added to your server, use the `/scan` command to sta
 
 The bot will:
 1. Fetch all members in the guild
-2. Check each member against the screenshare.lol API at a rate of 5 per second
+2. Check each member against the screenshare.lol API at a rate of 5 per second (iirc. 5000 members per day at max, so reserved for smaller communities.)
 3. Provide a summary of results
 4. Generate a detailed JSON report for any detections found
 
