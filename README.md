@@ -21,11 +21,11 @@ This bot scans all members in a Discord guild against the screenshare.lol API wi
 3. Install dependencies:
    ```
    npm install
-   `
+   ```
 4. Run the bot:
-   `
+   ```
    node index.js
-   `
+   ```
 
 ## Usage
 
