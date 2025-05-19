@@ -13,11 +13,11 @@ This bot scans all members in a Discord guild against the screenshare.lol API wi
 
 1. Clone this repository
 2. Create a `.env` file with the following variables:
-   \`\`\`
+   ```
    DISCORD_TOKEN=your_discord_bot_token
    CLIENT_ID=your_discord_application_id
    SCREENSHARE_API_KEY=your_screenshare_api_key (API can be retrieved from https://screenshare.lol/api)
-   \`\`\`
+   ```
 3. Install dependencies:
    \`\`\`
    npm install
