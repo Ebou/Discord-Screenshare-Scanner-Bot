@@ -1,24 +1,53 @@
-# Discord-Screenshare-Scanner-Bot
+# Discord Bot for Screenshare.lol API Scanning
 
-This Discord bot scans all members in your server against the screenshare.lol API to identify potential detections. Here's what it does:
+This bot scans all members in a Discord guild against the screenshare.lol API with proper rate limiting.
 
-## Core Functionality
+## Features
 
-- **Automated Member Scanning**: Checks all Discord IDs in your server against the screenshare.lol database
-- **Smart Rate Limiting**: Processes 5 members per second to prevent API rate limits
-- **Auto-Stop Protection**: Automatically stops when rate limits are detected to prevent API lockouts
-- **Detailed Reporting**: Provides summary statistics and detailed JSON reports of any detections
+- Scans all members in a guild against the screenshare.lol API
+- Implements rate limiting (5 requests per second) to avoid API rate limits
+- Provides detailed reports of any detections found
+- Automatically stops when rate limits are hit
 
+## Setup
 
-## How It Works
+1. Clone this repository
+2. Create a `.env` file with the following variables:
+   \`\`\`
+   DISCORD_TOKEN=your_discord_bot_token
+   CLIENT_ID=your_discord_application_id
+   SCREENSHARE_API_KEY=your_screenshare_api_key
+   \`\`\`
+3. Install dependencies:
+   \`\`\`
+   npm install
+   \`\`\`
+4. Run the bot:
+   \`\`\`
+   node index.js
+   \`\`\`
 
-When an administrator uses the `/scan` command, the bot:
+## Usage
 
-1. Fetches all members in the server
-2. Systematically checks each member ID against the screenshare.lol API
-3. Collects and organizes any detection data found
-4. Generates a comprehensive report showing confidence scores and detection reasons
-5. Provides both a summary in Discord and a detailed JSON file for further analysis
+Once the bot is running and added to your server, use the `/scan` command to start scanning all members in the guild.
 
+The bot will:
+1. Fetch all members in the guild
+2. Check each member against the screenshare.lol API at a rate of 5 per second
+3. Provide a summary of results
+4. Generate a detailed JSON report for any detections found
 
-The bot is designed for server administrators who need to efficiently check their member base while respecting API limitations.
+## Requirements
+
+- Node.js 16.9.0 or higher
+- Discord.js v14
+- A Discord bot token with the following permissions:
+  - `bot` scope
+  - `applications.commands` scope
+  - `Read Messages/View Channels` permission
+  - `Send Messages` permission
+  - `Server Members Intent` enabled in the Discord Developer Portal
+
+## Rate Limiting
+
+The bot is configured to make 5 requests per second to avoid hitting the screenshare.lol API rate limits. If a rate limit is hit, the bot will stop scanning and report how many members were checked before the limit was reached.
